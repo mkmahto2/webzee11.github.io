@@ -1,0 +1,88 @@
+/**
+ * CSS Box model demo
+ */
+
+ #box {
+	width: 300px;
+	height: 200px;
+	padding: 30px;
+	border-width: 10px;
+	/*box-sizing: border-box;*/
+}
+
+/* No editing below this point */
+
+#box {
+	width: 300px;
+	height: 200px;
+	padding: 30px;
+	border-style: solid;
+	border-color: orange;
+	margin: 20px auto;
+	background-image: linear-gradient(yellowgreen, yellowgreen), linear-gradient(yellow, yellow);
+	background-clip: content-box, padding-box, border-box;	
+	font: 100%/1.4 sans-serif;
+	text-shadow: 0 1px 1px white;
+}
+
+body:after {
+	content: "";
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	pointer-events: none;
+	background: linear-gradient(0deg, rgba(0,0,0,.05) 1px, transparent 1px),
+	            linear-gradient(0deg, rgba(0,0,0,.1) 1px, transparent 1px),
+	            linear-gradient(90deg, rgba(0,0,0,.05) 1px, transparent 1px),
+	            linear-gradient(90deg, rgba(0,0,0,.1) 1px, transparent 1px);
+	background-size: 10px 10px, 50px 50px, 10px 10px, 50px 50px;
+}
+
+aside {
+	position: absolute;
+	bottom:1em;
+	right: 1em;
+	z-index: 1;
+	line-height: 1.5;
+}
+
+dfn {
+	display: block;
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+dfn:before {
+	content:"";
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	vertical-align: -.2em;
+	margin-right: .4em;
+	border-radius: 50%;
+	
+}
+
+dfn[title="orange"]:before { background: orange }
+dfn[title="yellowgreen"]:before { background: yellowgreen }
+dfn[title="yellow"]:before { background: yellow }
+
+
+dfn[title="orange"] { color: orange }
+dfn[title="yellowgreen"] { color: yellowgreen }
+dfn[title="yellow"] { color: yellow }
+
+#image,
+#gradient {
+	height: 70px;
+	background-color: grey;	
+}
+
+#image {
+	background: left bottom url(http://f.cl.ly/items/0K09332Q3z0b0C31303y/bg-gold-strip.gif) repeat-x;
+}
+
+#gradient {
+        border-top: 4px solid black;
+	background-image: -webkit-linear-gradient(bottom, #F1DA35, #fff); 
+}
